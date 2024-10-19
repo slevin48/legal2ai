@@ -1,51 +1,29 @@
 import streamlit as st
-import shutil, os
+import pandas as pd
+import openai
 
-def zip_chat():
-  # Zip the chat folder
-  shutil.make_archive('chat', 'zip', 'chat')
-  st.toast('Chat zipped!',icon = "🥞")
+def get_embedding(text):
+    response = openai.embeddings.create(
+        input=text,
+        model="text-embedding-3-small"
+    )
+    return response.data[0].embedding
 
-@st.experimental_dialog("Cast your vote")
-def delete_chat():
-    st.write("❌ Are you sure you want to delete the chat history?")
-    if st.button("Delete chat history"):
-        shutil.rmtree('chat')
-        os.mkdir('chat')
-        st.rerun() 
+# Load the data
+def load_data():
+    return pd.read_csv('data/legal-prompts-embeddings-with-category.csv')
 
-assistant_emojis = ['🤖', '⚖️', '👩‍⚖️', '🧑‍⚖️', '🧑‍💼']
-user_emojis = ['🐱', '🙂', '🤓', '🤐', '👨‍💼']
-models_name = ['gpt-4o-mini', 'gpt-4o']
+# Streamlit app layout for browsing prompts
+st.title("Prompt categorization")
+data = load_data()
 
-if 'avatar' not in st.session_state:
-  st.session_state.avatar = {"assistant": "🤖", "user": "🐱"}
+# Display barchart of the categories using plotly
+category_counts = data['Category_predicted'].value_counts().sort_values(ascending=False)
+st.write(category_counts)
+st.bar_chart(category_counts, color='count', use_container_width=True, horizontal=True)
 
-if 'model' not in st.session_state:
-    st.session_state.model = 'gpt-4o-mini'
-
-if 'debug' not in st.session_state:
-  st.session_state.debug = False
-
-st.session_state.model = st.selectbox('Select Model', models_name,index=models_name.index(st.session_state.model))
-
-col1,col2 = st.columns(2)
-current_assistant = st.session_state.get('avatar', {}).get('assistant', '🤖')
-current_user = st.session_state.get('avatar', {}).get('user', '🐱')
-
-with col1:
-  assistant = st.radio('Select Assistant', assistant_emojis, index=assistant_emojis.index(current_assistant))
-with col2:
-  user = st.radio('Select User', user_emojis, index=user_emojis.index(current_user))
-st.session_state.avatar = {"assistant": assistant, "user": user}
-
-if st.toggle('Export history'):
-  zip_chat()
-  st.download_button('Download chat history',open('chat.zip', 'rb'),'chat.zip',mime='application/zip')
-
-if st.button('Delete history'):
-  delete_chat()
-
-st.session_state.debug = st.toggle('Debug mode',value=st.session_state.debug)
-if st.session_state.debug:
-  st.sidebar.write(st.session_state)
+# Add a search bar to filter prompts
+search_query = st.text_input("Search prompts:")
+filtered_data = data[data['Prompt'].str.contains(search_query, case=False, na=False)]
+st.dataframe(filtered_data.drop(columns=['Domain','Embedding']), hide_index=True, use_container_width=True)
+st.write(f"Found {filtered_data.shape[0]} prompts")

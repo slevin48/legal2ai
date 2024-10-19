@@ -34,18 +34,18 @@ def check_password():
 
 st.logo('img/balance-scale_logo.png',size='large')
 if check_password():
-    st.balloons()
-    # st.write("# Bienvenue sur Legal2AI!")
         
-    # Define your pages
+    # Define your pages 📄
     chatbot_page = st.Page("chatbot.py", title="Assistant", icon="🤖")
+    config_page = st.Page("config.py", title="Configuration", icon="⚙️")
     admin_page = st.Page("admin.py", title="Admin", icon="📄")
+
 
     # Create the navigation
     pg = st.navigation(
         {
             "Main": [chatbot_page],
-            "Admin": [admin_page]
+            "Admin": [admin_page,config_page],
         },
         position="sidebar",
         expanded=True
