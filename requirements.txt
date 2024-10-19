@@ -6,4 +6,4 @@ scikit-learn
 matplotlib
 seaborn
 python-dotenv
-python-toml
+toml
