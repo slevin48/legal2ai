@@ -1,4 +1,4 @@
-# Legal AI Assistant 📄🤖
+# Legal AI Assistant ⚖️🤖
 
 This is a simple legal AI assistant built with Streamlit and OpenAI. 
 It uses embeddings to classify the user's query into one of the 5 categories.
@@ -25,3 +25,12 @@ Génère une description entre 3 et 5 lignes des domaines suivants, servant a cr
 - Assistance en propriété intellectuelle
 - Assistance en gestion de crise juridique
 ```
+
+## Naming ideas for the app
+
+- Justine : Un jeu de mots avec "justice" et un prénom féminin.
+- Lex/Lexi : Évoque le mot latin lex qui signifie "loi".
+- Lawrence : Jeu de mots avec "law" (loi en anglais) et un prénom.
+- Robert : Un hommage à Robert Badinter, avocat et homme politique français.
+- Harvey : Un hommage à Harvey Birdman, avocat et personnage de l'univers de Batman (ou de Harvey Specter dans Suits).
+- Lincoln : Un avocat de la série Lincoln Lawyer.
