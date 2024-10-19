@@ -32,7 +32,7 @@ def check_password():
         # Password correct.
         return True
 
-st.logo('img/balance-scale_logo.png',size='large')
+st.logo('img/legal2ai.png')
 if check_password():
         
     # Define your pages 📄
