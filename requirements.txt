@@ -1,0 +1,9 @@
+streamlit
+openai
+ipykernel
+pandas
+scikit-learn
+matplotlib
+seaborn
+python-dotenv
+python-toml

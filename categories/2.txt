@@ -1,0 +1,9 @@
+Conformité RGPD
+
+La conformité RGPD concerne l'adhésion au Règlement Général sur la Protection des Données, qui encadre le traitement des données personnelles dans l'Union européenne. Les entreprises doivent assurer la protection des données des individus, obtenir leur consentement explicite, permettre l'exercice de leurs droits et garantir la sécurité des informations collectées et traitées.
+
+Exemples :
+
+Mettre en place des politiques de confidentialité transparentes pour informer les utilisateurs sur l'utilisation de leurs données.
+Nommer un Délégué à la Protection des Données (DPO) pour superviser les activités de traitement des données.
+Répondre aux demandes de suppression ou de modification des données personnelles des clients.
