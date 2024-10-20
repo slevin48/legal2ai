@@ -1,5 +1,10 @@
 # Legal AI Assistant ⚖️🤖
 
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://legal2ai.streamlit.app/)
+
+🔐**Demo:** legal4life
+
+
 This is a simple legal AI assistant built with Streamlit and OpenAI. 
 It uses embeddings to classify the user's query into one of the 5 categories.
 
