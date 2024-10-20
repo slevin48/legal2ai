@@ -4,7 +4,6 @@
 
 🔐**Demo:** legal4life
 
-
 This is a simple legal AI assistant built with Streamlit and OpenAI. 
 It uses embeddings to classify the user's query into one of the 5 categories.
 
@@ -39,3 +38,8 @@ Génère une description entre 3 et 5 lignes des domaines suivants, servant a cr
 - Robert : Un hommage à Robert Badinter, avocat et homme politique français.
 - Harvey : Un hommage à Harvey Birdman, avocat et personnage de l'univers de Batman (ou de Harvey Specter dans Suits).
 - Lincoln : Un avocat de la série Lincoln Lawyer.
+
+
+## Resources
+
+- [Create a dynamic navigation menu - Streamlit](https://docs.streamlit.io/develop/tutorials/multipage/dynamic-navigation)
