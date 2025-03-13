@@ -36,16 +36,15 @@ st.logo('img/legal2ai.png')
 if check_password():
         
     # Define your pages 📄
-    chatbot_page = st.Page("chatbot.py", title="Assistant", icon="🤖")
-    config_page = st.Page("config.py", title="Configuration", icon="⚙️")
-    admin_page = st.Page("admin.py", title="Admin", icon="📄")
-
+    
+    class_page = st.Page("class.py", title="Classification", icon="📄")
+    admin_page = st.Page("admin.py", title="Administration", icon="⚙️")
 
     # Create the navigation
     pg = st.navigation(
         {
-            "Main": [chatbot_page],
-            "Admin": [admin_page,config_page],
+            "Main": [class_page],
+            "Admin": [admin_page],
         },
         position="sidebar",
         expanded=True

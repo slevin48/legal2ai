@@ -6,7 +6,7 @@
 
 
 This is a simple legal AI assistant built with Streamlit and OpenAI. 
-It uses embeddings to classify the user's query into one of the 5 categories.
+It uses embeddings to classify the user's input into a list of categories.
 
 ## Prompt generation (in French 🇫🇷):
 
