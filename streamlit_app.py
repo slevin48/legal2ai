@@ -38,7 +38,7 @@ if check_password():
     # Define your pages 📄
     
     class_page = st.Page("class.py", title="Classification", icon="📄")
-    admin_page = st.Page("admin.py", title="Administration", icon="⚙️")
+    admin_page = st.Page("admin.py", title="Categories", icon="⚙️")
 
     # Create the navigation
     pg = st.navigation(
