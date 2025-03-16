@@ -8,7 +8,7 @@ def load_categories():
 cat = load_categories()
 
 # Streamlit app layout
-st.title("Admin")
+st.write("## Categories")
 
-# Display categories in a text area
-categories = st.text_area("Categories", value="\n".join(cat['category'].tolist()), height=300)
+# Display categories as a dataframe
+st.write(cat)
